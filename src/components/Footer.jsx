@@ -3,7 +3,7 @@ import { FaTwitter, FaDiscord, FaEnvelope, FaLinkedin, FaInstagram, FaPinterest 
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white overflow-hidden py-4">
+    <footer className="bg-black text-white overflow-hidden py-4 ">
       <div className="container mx-auto flex flex-col items-center lg:flex-row lg:justify-between lg:items-start">
         
         {/* Left Side */}
@@ -96,3 +96,14 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+
+
+
+
+
+
+
+
+

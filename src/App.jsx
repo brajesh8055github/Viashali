@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import AnnouncementBanner from './components/AnnouncementBanner';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Career from './components/Career';
 import LandingPage from './components/LandingPage';
@@ -18,8 +17,7 @@ function App() {
   }, [location]);
   return (
     <div>
-      {/* AnnouncementBanner */}
-      <section id='banner'>
+       <section id='banner'>
         <AnnouncementBanner />
       </section>
 
@@ -27,15 +25,11 @@ function App() {
       <section id='navbar'>
         <Navbar />
       </section>
+      
       <Routes>
         <Route path="/" element={<LandingPage/>}></Route>
         <Route path="/career" element={<Career/>}></Route>
       </Routes>
-      <section id='footer'>
-              <Footer />
-            </section>
-
-  
     </div>
   );
 }

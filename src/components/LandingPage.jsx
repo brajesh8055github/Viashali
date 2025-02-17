@@ -8,70 +8,69 @@ import Agency from './Agency'
 import About from './About'
 import Abhisek from './Abhisek'
 import Contact from './Contact'
+import Footer from './Footer'
 
 const LandingPage = () => {
-      const contactRef = useRef(null);
-    
-      // Function to scroll to the contact section
-      const scrollToContact = () => {
+    const contactRef = useRef(null);
+
+    // Function to scroll to the contact section
+    const scrollToContact = () => {
         if (contactRef.current) {
-          contactRef.current.scrollIntoView({ behavior: 'smooth' });
+            contactRef.current.scrollIntoView({ behavior: 'smooth' });
         }
-      };
-  return (
-    <div>
-         <section id='homevideo'>
-        <Homevideo />
-      </section>
+    };
+    return (
+        <div>
 
-      {/* Home Content Section */}
-      <section id='homecontent'>
-        <Homecontent />
-      </section>
+            <section id='homevideo'>
+                <Homevideo />
+            </section>
 
-      {/* Online Presence Section */}
-      <section id='onlinepresence'>
-        <OnlinePresence onScrollToContact={scrollToContact} /> {/* Pass the function as a prop */}
-      </section>
+            {/* Home Content Section */}
+            <section id='homecontent'>
+                <Homecontent />
+            </section>
 
-      {/* Features Grid Section */}
-      <section id='featuresgrid'>
-        <FeaturesGrid />
-      </section>
+            {/* Online Presence Section */}
+            <section id='onlinepresence'>
+                <OnlinePresence onScrollToContact={scrollToContact} /> {/* Pass the function as a prop */}
+            </section>
 
-      {/* UI/UX Sliding Cards Section */}
-      <section id='uiux'>
-        <SlidingCards />
-      </section>
+            {/* Features Grid Section */}
+            <section id='featuresgrid'>
+                <FeaturesGrid />
+            </section>
 
-      {/* Digital Marketing Section */}
-      <section id='agency'>
-        <Agency />
-      </section>
+            {/* UI/UX Sliding Cards Section */}
+            <section id='uiux'>
+                <SlidingCards />
+            </section>
 
-      {/* About Us Section */}
-      <section id='about'>
-        <About />
-      </section>
+            {/* Digital Marketing Section */}
+            <section id='agency'>
+                <Agency />
+            </section>
 
-      {/* Case Study Abhisek Section */}
-      <section id='abhisek'>
-        <Abhisek />
-      </section>
+            {/* About Us Section */}
+            <section id='about'>
+                <About />
+            </section>
 
-      {/* Team Member Section */}
-      {/* <section id='teammember'>
-        <Teammember />
-      </section> */}
+            {/* Case Study Abhisek Section */}
+            <section id='abhisek'>
+                <Abhisek />
+            </section>
+            {/* Contact Section */}
+            <section id='contact' ref={contactRef}>
+                <Contact />
+            </section>
+            <section id='footer'>
+                <Footer />
+            </section>
 
-      {/* Contact Section */}
-      <section id='contact' ref={contactRef}>
-        <Contact />
-      </section>
 
-      
-    </div>
-  )
+        </div>
+    )
 }
 
 export default LandingPage
