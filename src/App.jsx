@@ -1,33 +1,23 @@
-import React, { useRef } from 'react';
+import { useEffect } from 'react';
 import AnnouncementBanner from './components/AnnouncementBanner';
 import Navbar from './components/Navbar';
-import Homevideo from './components/Homevideo';
-import Homecontent from './components/Homecontent';
-import SlidingCards from './components/SlidingCards';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
-import OnlinePresence from './components/OnlinePresence';
-import FeaturesGrid from './components/FeaturesGrid';
-import Teammember from './components/Teammember';
-import Abhisek from './components/Abhisek';
-import About from './components/About';
-import Agency from './components/Agency';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import Career from './components/Career';
+import LandingPage from './components/LandingPage';
 
 function App() {
-  const contactRef = useRef(null);
-
-  // Function to scroll to the contact section
-  const scrollToContact = () => {
-    if (contactRef.current) {
-      contactRef.current.scrollIntoView({ behavior: 'smooth' });
+  const location = useLocation();
+  
+  useEffect(() => {
+    if (location.pathname === "/" && location.state?.scrollTo) {
+      setTimeout(() => {
+        document.getElementById(location.state.scrollTo)?.scrollIntoView({ behavior: "smooth" });
+      }, 300);
     }
-  };
-
+  }, [location]);
   return (
     <div>
-
-       
-
       {/* AnnouncementBanner */}
       <section id='banner'>
         <AnnouncementBanner />
@@ -37,61 +27,13 @@ function App() {
       <section id='navbar'>
         <Navbar />
       </section>
-
-      {/* Home Video Section */}
-      <section id='homevideo'>
-        <Homevideo />
-      </section>
-
-      {/* Home Content Section */}
-      <section id='homecontent'>
-        <Homecontent />
-      </section>
-
-      {/* Online Presence Section */}
-      <section id='onlinepresence'>
-        <OnlinePresence onScrollToContact={scrollToContact} /> {/* Pass the function as a prop */}
-      </section>
-
-      {/* Features Grid Section */}
-      <section id='featuresgrid'>
-        <FeaturesGrid />
-      </section>
-
-      {/* UI/UX Sliding Cards Section */}
-      <section id='uiux'>
-        <SlidingCards />
-      </section>
-
-      {/* Digital Marketing Section */}
-      <section id='agency'>
-        <Agency />
-      </section>
-
-      {/* About Us Section */}
-      <section id='about'>
-        <About />
-      </section>
-
-      {/* Case Study Abhisek Section */}
-      <section id='abhisek'>
-        <Abhisek />
-      </section>
-
-      {/* Team Member Section */}
-      {/* <section id='teammember'>
-        <Teammember />
-      </section> */}
-
-      {/* Contact Section */}
-      <section id='contact' ref={contactRef}>
-        <Contact />
-      </section>
-
-      {/* Footer Section */}
+      <Routes>
+        <Route path="/" element={<LandingPage/>}></Route>
+        <Route path="/career" element={<Career/>}></Route>
+      </Routes>
       <section id='footer'>
-        <Footer />
-      </section>
+              <Footer />
+            </section>
 
   
     </div>
