@@ -20,7 +20,8 @@ function Navbar() {
 
   return (
 <div className="fixed top-10 p-5 font-semibold text-black w-full font-poppins text-lg flex h-20 items-center justify-between z-40 shadow-md bg-gradient-to-b from-white to-gray-200">
-      <img src="VAISHALI TECH.png" alt="Logo" className="w-52 h-12 ml-5 sm:w-36 sm:h-10" />
+  <Link to="/">
+      <img src="VAISHALI TECH.png" alt="Logo" className="w-52 h-12 ml-5 sm:w-36 sm:h-10" /> </Link>
       <div className="md:hidden cursor-pointer mr-6" onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? <FaTimes size={30} /> : <FaBars size={30} />}
       </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaTwitter, FaDiscord, FaEnvelope, FaLinkedin, FaInstagram, FaPinterest } from 'react-icons/fa'; // Import Pinterest icon
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -10,7 +11,8 @@ const Footer = () => {
         <div className="flex justify-start items-center mb-4 lg:mb-0">
           <div className="flex items-center space-x-2">
             {/* Logo and Title */}
-            <img src="/VAISHALI TECH.png" alt="company logo" className="w-auto h-12" />
+            <Link to="/">
+            <img src="/VAISHALI TECH.png" alt="company logo" className="w-auto h-12" /></Link>
           </div>
         </div>
 

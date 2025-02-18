@@ -64,19 +64,18 @@ const Career = () => {
     <div className="flex flex-col min-h-screen">
       {/* Main Content */}
       <div className="flex-grow w-full mx-auto p-8 pt-36">
-        <div className="py-8 text-left">
+        <div className=" py-8 text-left">
           <button className="bg-white text-black px-6 py-2 rounded-full text-sm font-semibold border">
             We&apos;re hiring!
           </button>
           <h1 className="text-3xl md:text-5xl font-bold mt-4">
             Be part of our mission
           </h1>
-          <p className="mt-4 text-gray-600 max-w-2xl">
-            We&apos;re looking for passionate people to join us on our mission.
-            We value flat hierarchies, clear communication, and full ownership
-            and responsibility.
+          <p className="mt-4 text-gray-600 w-full max-w-2xl break-words">
+            We&apos;re looking for passionate people to join us on our mission. We value flat hierarchies, clear communication, and full ownership and responsibility.
           </p>
         </div>
+
         <h2 className="text-2xl font-bold mb-4 text-center">Job Openings</h2>
         <div className="flex flex-wrap gap-2 mb-4 ">
           {categories.map((category) => (
@@ -90,11 +89,10 @@ const Career = () => {
             </button>
           ))}
         </div>
-
-        <div className="space-y-4 ">
+        <div className="space-y-4">
           {filteredJobs.length > 0 ? (
             filteredJobs.map((job) => (
-              <div key={job.id} className="border rounded-lg p-6 shadow-md">
+              <div key={job.id} className="border rounded-lg p-6 shadow-md w-full">
                 <div
                   className="flex justify-between items-center cursor-pointer"
                   onClick={() => toggleJobDetails(job.id)}
@@ -104,7 +102,7 @@ const Career = () => {
                 </div>
                 {expandedJob === job.id && (
                   <div className="mt-3 text-gray-600">
-                    <p>
+                    <p className="break-words overflow-hidden max-w-full">
                       We&apos;re looking for a {job.title.toLowerCase()} to join our team.
                     </p>
                     <div className="mt-2 flex gap-3 flex-wrap">
@@ -129,6 +127,7 @@ const Career = () => {
             <p className="text-center text-gray-500">No openings available</p>
           )}
         </div>
+
 
         {/* Popup */}
         {isPopupOpen && selectedJob && (
